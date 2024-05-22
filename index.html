@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base target="_top">
+  <title>Product Image Upload</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ดึงค่า query string จาก URL ปัจจุบัน
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get('userId');
+      // ตรวจสอบว่ามี userId หรือไม่
+      if (userId) {
+        // ตั้งค่า URL ใหม่สำหรับ iframe โดยเพิ่ม query string userId
+        const iframe = document.getElementById('myIframe');
+        iframe.src = `https://script.google.com/macros/s/AKfycbwHZfdtAIyq-ePBpRty_LQ14ZXPZQrxHvdRsxJkw3cl6jLn9ZmHfxnDYVsWEupwxerJxQ/exec?userId=${userId}`;
+      } else {
+        iframe.src = `https://script.google.com/macros/s/AKfycbwHZfdtAIyq-ePBpRty_LQ14ZXPZQrxHvdRsxJkw3cl6jLn9ZmHfxnDYVsWEupwxerJxQ/exec`;
+      }
+    });
+  </script>
+</head>
+<body>
+  <iframe id="myIframe" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;"></iframe>
+</body>
+</html>
