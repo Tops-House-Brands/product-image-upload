@@ -10,10 +10,10 @@
       // ดึงค่า query string จาก URL ปัจจุบัน
       const urlParams = new URLSearchParams(window.location.search);
       const userId = urlParams.get('userId');
+      const iframe = document.getElementById('myIframe');
       // ตรวจสอบว่ามี userId หรือไม่
       if (userId) {
         // ตั้งค่า URL ใหม่สำหรับ iframe โดยเพิ่ม query string userId
-        const iframe = document.getElementById('myIframe');
         iframe.src = `https://script.google.com/macros/s/AKfycbwHZfdtAIyq-ePBpRty_LQ14ZXPZQrxHvdRsxJkw3cl6jLn9ZmHfxnDYVsWEupwxerJxQ/exec?userId=${userId}`;
       } else {
         iframe.src = `https://script.google.com/macros/s/AKfycbwHZfdtAIyq-ePBpRty_LQ14ZXPZQrxHvdRsxJkw3cl6jLn9ZmHfxnDYVsWEupwxerJxQ/exec`;
